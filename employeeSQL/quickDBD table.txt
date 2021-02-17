@@ -1,0 +1,38 @@
+quickDBD table
+
+----------
+
+departments
+-
+dept_no VARCHAR PK
+dept_name VARCHAR
+
+dept_emp
+-
+emp_no VARCHAR FK >-< employees.emp_no
+dept_no VARCHAR FK >-< Departments.dept_no
+
+dept_manager
+-
+emp_no VARCHAR
+dept_no VARCHAR FK >-< Departments.dept_no
+
+employees
+-
+emp_no VARCHAR PK FK - dept_emp.emp_no
+emp_title_id VARCHAR FK -< titles.title_id
+birth_date VARCHAR
+first_name VARCHAR
+last_name VARCHAR
+sex VARCHAR
+hire_date VARCHAR
+
+salaries
+-
+emp_no VARCHAR PK FK >- employees.emp_no
+salary INT
+
+titles
+-
+title_id VARCHAR PK 
+title VARCHAR
